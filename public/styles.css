@@ -2,6 +2,14 @@ body {
     background-color: #bcb1ac;
     text-decoration: none;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration:none;
+  color: black;
+}
 /* The rules for the desktop navbar begin here */
 /* The logo is centered and a margin assigned */
 header[role="banner"] #logo-main {

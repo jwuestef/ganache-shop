@@ -55,19 +55,6 @@
       </nav>
     </header>
   </div>
-  <script type="text/javascript">
-    if (window.screen.width < 1100) {
-      console.log("we made it!")
-      document.getElementById('desktopNav').setAttribute('style', 'display:none;');
-      // document.getElementById('adminLogin').setAttribute('style', 'display:none;');
-      // document.getElementById('adminLogout').setAttribute('style', 'display:none;');
-
-    }
-    //if statement hides mobile navbar if device is more than 1100 pixels wide
-    // if (window.screen.width >= 1100) {
-    //   document.getElementById('mobileNav').setAttribute('style', 'display:none;');
-    // }
-  </script>
 
 
 
@@ -105,15 +92,8 @@
   
 
         <!-- Mini Ganache logo -->
-        <img src="gLogo.png" style="float:left; height:30px; width:30px;">
+        <img src="gLogo.png" id="adminLogin" style="float:left; height:30px; width:30px;">
 
-  
-        <!-- Text in middle of footer -->
-        <div style="width:100%">
-          <p id="footerParagraph"></p>
-        </div>
-  
-  
         <!-- Social media links -->
         <div style="float: right">
           <a id="footerInstagramLink" target="_blank">
@@ -123,6 +103,13 @@
             <img src="facebook.png" alt="Facebook Logo" width="25px;">
           </a>
         </div>
+  
+        <!-- Text in middle of footer -->
+        <div style="width:100%">
+          <p id="footerParagraph" style="text-align: center;"></p>
+        </div>
+  
+  
   
       </footer>
   
