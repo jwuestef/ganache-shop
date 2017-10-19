@@ -143,3 +143,15 @@ header[role="banner"] #logo-main {
   ul {
     border: none;
   }
+  /* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
+
+footer {
+  text-align: center;
+  font-size: 1.4em;
+  position: flex;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  width: 100%;
+  height: 40px;
+  color: #3b2314;
+}
