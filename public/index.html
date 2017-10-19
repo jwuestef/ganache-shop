@@ -12,17 +12,69 @@
 
 <body>
 
-    <div>
+    <!-- <div>
         <script type="text/javascript" src="https://app.ecwid.com/script.js?2314096"></script>
         <script type="text/javascript">
             xMinicart("style=");
         </script>
-    </div>
+    </div> -->
 
 
 
     <!-- Navbar here -->
-    <p style="background-color:darkcyan">(Navbar will go here)</p>
+    <div class="container-fluid" id="desktopNav">
+        <header role="banner">
+            <img id="logo-main" src="../../assets/genuineLogo.png" width="400" alt="Ganache Logo">
+            <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
+                <div class="nav navbar-nav">
+                    <div class="container-fluid" id="selecty">
+
+                        <div class="dropdown" id="homeBtn">
+                            <a class="dropbtn" href="https://www.google.com">Home</a>
+                        </div>
+
+                        <div class="dropdown" id="aboutBtn">
+                            <a class="dropbtn" href="">About</a>
+                        </div>
+
+                        <div class="dropdown" id="chocoBtn">
+                            <a class="dropbtn" href="">Our Chocolates</a>
+                            <div class="dropdown-content">
+                                <a href="">Truffles</a>
+                                <a href="">Barks</a>
+                                <a href="">Assorted Chocolates</a>
+                                <a href="">Fudge</a>
+                                <a href="">Seasonal</a>
+                                <a href="">Other Chocolates</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown" id="shopBtn">
+                            <a class="dropbtn" href="">Shop</a>
+                        </div>
+
+                        <div class="dropdown" id="contactBtn">
+                            <a class="dropbtn" href="">Contact Us</a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <script type="text/javascript">
+        if (window.screen.width < 1100) {
+            console.log("we made it!")
+            document.getElementById('desktopNav').setAttribute('style', 'display:none;');
+            // document.getElementById('adminLogin').setAttribute('style', 'display:none;');
+            // document.getElementById('adminLogout').setAttribute('style', 'display:none;');
+
+        }
+        //if statement hides mobile navbar if device is more than 1100 pixels wide
+        // if (window.screen.width >= 1100) {
+        //     document.getElementById('mobileNav').setAttribute('style', 'display:none;');
+        // }
+    </script>
 
 
     <div class="container">
@@ -55,9 +107,10 @@
     <script type="text/javascript" src="https://app.ecwid.com/script.js?2314096" charset="utf-8"></script>
 
     <script type="text/javascript">
-                        xProductBrowser("categoriesPerRow=3", "views=grid(4,3) list(10) table(20)", "categoryView=grid", "searchView=list", "id=my-store-2314096");
-                        xMinicart("style=", "layout=MiniAttachToProductBrowser");
-                        xSearch("id=my-search-2314096");
+        xProductBrowser("categoriesPerRow=3", "views=grid(4,3) list(10) table(20)", "categoryView=grid",
+            "searchView=list", "id=my-store-2314096");
+        xMinicart("style=", "layout=MiniAttachToProductBrowser");
+        xSearch("id=my-search-2314096");
     </script>
 
 
