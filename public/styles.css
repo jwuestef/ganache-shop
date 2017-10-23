@@ -22,14 +22,12 @@ header[role="banner"] #logo-main {
   margin: 10px auto;
   align-content: center;
 }
-
 /* The background leaves rounded corners if not transparent, padding sharpens it */
 #navbar-primary {
   background: transparent;
   padding: 0 2% 0 2%;
   border: none;
 }
-
 /* The font family is defined to override global styles */
 #navbar-primary.navbar-default .navbar-nav {
   width: 100%;
@@ -38,15 +36,16 @@ header[role="banner"] #logo-main {
   font-family: 'PT Serif', serif;
   color:#000;
 }
+
 #navbar-primary.navbar-default .navbar-nav>li {
   display: inline-block;
   float: none;
 }
+
 #navbar-primary.navbar-default .navbar-nav>li>a {
   padding-left: 0px;
   padding-right: 0px;
 }
-
 /* gradient defined for a variety of web browsers */
 .navbar-nav {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#4f3727), to(white));
@@ -59,25 +58,30 @@ header[role="banner"] #logo-main {
   white-space: nowrap;
   position: flex;
 }
+
 .dropdown:focus {
   border: 20px solid #000;
 }
+
 .navvy {
   color: black;
   margin: 0 5px 0 5px;
   text-align: center;
 }
-nav {
+
+nav{
   font-size: 1.6em;
   display: block;
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
 #navImg{
   align-content: center;
 }
 
 /* Dropdown Button */
+
 .dropbtn {
   background-color: transparent;
   color: #000;
@@ -89,6 +93,7 @@ nav {
 }
 
 /* The container <div> - needed to position the dropdown content */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -100,6 +105,7 @@ nav {
 }
 
 /* Dropdown Content (Hidden by Default) */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -111,6 +117,7 @@ nav {
 }
 
 /* Links inside the dropdown */
+
 .dropdown-content a {
   color: black;
   padding: 0 5px 0 5px;
@@ -126,12 +133,14 @@ nav {
 }
 
 /* Show the dropdown menu on hover */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
+
 .dropdown:hover .dropbtn {
   background-color: transparent;
 }
@@ -139,6 +148,7 @@ nav {
 ul {
   border: none;
 }
+/* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
 
 footer {
   text-align: center;
