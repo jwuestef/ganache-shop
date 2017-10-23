@@ -13,9 +13,9 @@ $(document).ready(function() {
     }
 
     // If statement hides mobile navbar if device is more than 1100 pixels wide
-    // if (window.screen.width >= 1100) {
-    //   document.getElementById('mobileNav').setAttribute('style', 'display:none;');
-    // }
+    if (window.screen.width >= 1100) {
+      document.getElementById('mobileNav').setAttribute('style', 'display:none;');
+    }
     
 
 

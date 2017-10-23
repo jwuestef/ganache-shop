@@ -160,3 +160,61 @@ footer {
   height: 40px;
   color: #3b2314;
 }
+/* Rules for mobile navbar begin here */
+/* Bootstrap pill strategy used */
+.pillz {
+  color: #000;
+  margin: 0 -1.5% 0 0;
+}
+/* Gradient is different when compared to desktop */
+.chillz {
+  background-image: linear-gradient(to right, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #fff);
+  margin-left:2%;
+}
+
+.nav-pills>.active>a,
+.nav-pills>.active>a:hover {
+  background-color: transparent;
+}
+/* Mobile dropdown requires clicking, as hover is disabled */
+.dropdown-menu{
+  background-image: linear-gradient(to bottom, #4f3727, #fff);
+}
+
+#mobileNav {
+  display: inline-block;
+}
+
+/* Varying screen widths cause problems, media queries can resolve them */
+/* Negative margin values pull pills together to better fit screens without adding a new row */
+/* max-width 340 catches extremely small widths, like iPhone5 */
+@media screen and (max-width:340px) {
+  .pillz {
+    margin-left: -3%;
+    margin-right: -3%;
+    color: #000;
+  }
+  .pillz a {
+    color: #000;
+  }
+}
+/* Many devices fit this category */
+@media screen and (max-width:380px) {
+  .pillz {
+    margin-left: -2%;
+  }
+  .pillz a {
+    color: #000;
+  }
+}
+/* 420 pixel width catches many more mobile devices */
+@media screen and (max-width:420px) {
+  .pillz {
+    margin-left: -3%;
+    /* margin-right: -3%; */
+    color: #000;
+  }
+  .pillz a {
+    color: #000;
+  }
+}
