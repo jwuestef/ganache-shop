@@ -3,8 +3,7 @@ $(document).ready(function() {
 
 
     // Sets black border around Shop link in navbar
-    document.getElementById('shopBtn').setAttribute('style', 'outline: 4px solid black; outline-offset:-4px;');
-
+    document.getElementById('shopBtn').setAttribute('style', 'outline: 4px solid black; outline-offset:5px;');
 
 
     
@@ -12,10 +11,12 @@ $(document).ready(function() {
         document.getElementById('desktopNav').setAttribute('style', 'display:none;');
         document.getElementById('adminLogin').setAttribute('style', 'display:none;');
     }
-      //if statement hides mobile navbar if device is more than 1100 pixels wide
-      // if (window.screen.width >= 1100) {
-      //   document.getElementById('mobileNav').setAttribute('style', 'display:none;');
-      // }
+
+    // If statement hides mobile navbar if device is more than 1100 pixels wide
+    // if (window.screen.width >= 1100) {
+    //   document.getElementById('mobileNav').setAttribute('style', 'display:none;');
+    // }
+    
 
 
     // On page load, calls getContent function and populates attributes for the navbar image
@@ -28,7 +29,6 @@ $(document).ready(function() {
 
     // On page load, calls getContent function and populates attributes for footer content
     getContent('footerPage').then(function(pageContent) {
-        console.log(pageContent.footerParagraph);
         document.getElementById('footerParagraph').innerText = pageContent.footerParagraph;
         document.getElementById('footerInstagramLink').setAttribute('href', pageContent.footerSocialMedia.instagram);
         document.getElementById('footerFacebookLink').setAttribute('href', pageContent.footerSocialMedia.facebook);
