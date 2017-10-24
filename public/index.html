@@ -57,6 +57,7 @@
     </header>
   </div>
   <!-- mobile navbar here -->
+<<<<<<< HEAD
   <nav id="mobileNav" class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -88,6 +89,38 @@
         </div>
       </div>
     </nav>
+=======
+  <div class="container" id="mobileNav">
+    <div class="row">
+      <header role="banner">
+        <!-- <img id="logo-main" src="../../assets/genuineLogo.png" width="150" alt="Ganache Logo"> -->
+        <img id="logo-main" *ngIf="(!isAdmin && navbarImage1Src)" width="150" [src]="navbarImage1Src" [alt]="navbarImage1Description">
+  
+        <ul class="nav nav-pills chillz">
+          <li class="pillz homePill" href="https://ganachechocolatier.org/home" data-toggle="pill"><a>Home</a></li>
+          <li class="pillz aboutPill" href="https://ganachechocolatier.org/about"><a data-toggle="pill">About</a></li>
+          <li class="dropdown pillz chocoPill">
+            <a class="dropdown-toggle" data-toggle="dropdown" >Chocolates
+              <!-- <a class="caret"></a> -->
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://ganachechocolatier.org/chocolates">All Chocolates</a></li>
+              <li><a href="https://ganachechocolatier.org/truffles">Truffles</a></li>
+              <li><a href="https://ganachechocolatier.org/barks">Barks</a></li>
+              <li><a href="https://ganachechocolatier.org/assorted">Assorted Chocolates</a></li>
+              <li><a href="https://ganachechocolatier.org/fudge">Fudge</a></li>
+              <li><a href="https://ganachechocolatier.org/seasonal">Seasonal</a></li>
+              <li><a href="https://ganachechocolatier.org/other">Other Chocolates</a></li>
+            </ul>
+          </li>
+          <li class="pillz shopPill" href="#"><a data-toggle="pill">Shop</a></li>
+          <li class="pillz contactPill" href="https://ganachechocolatier.org/contact"><a data-toggle="pill">Contact Us</a></li>
+        </ul>
+      </header>
+    </div>
+  </div>
+
+>>>>>>> 71b143a5f2b7854db7feffcdf5a7edf4b8888d58
 
 
 
