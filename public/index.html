@@ -164,6 +164,23 @@
     xSearch("id=my-search-2314096");
   </script>
 
+  <script>
+    // Initialize extra fields
+    ec.order = ec.order || {};
+    ec.order.extraFields = ec.order.extraFields || {};
+    
+    // Add a new optional text input 'How should we sign the package?' to shipping address form
+    ec.order.extraFields.wrapping_box_signature = {
+        'title': 'Warm weather may require a cold pack for shipping! Are you aware of this?',
+        'textPlaceholder': 'Cold Pack',
+        'type': 'select',
+        'selectOptions': [' ', 'I understand'],
+        'tip': 'We recommend you ship your order in a cold pack container. This is essential during summer months and highly recommended even during winter months. Only one container is required per order.',
+        'required': true,
+        'checkoutDisplaySection': 'shipping_address'
+    };
+    </script>
+
 
   <script type="text/javascript" src="jquery-3.2.1.js"></script>
   <script type="text/javascript" src="bootstrap.js"></script>
