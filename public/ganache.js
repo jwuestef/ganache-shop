@@ -7,13 +7,13 @@ $(document).ready(function() {
 
 
     
-    if (window.screen.width < 1100) {
+    if (window.screen.width < 1080) {
         document.getElementById('desktopNav').setAttribute('style', 'display:none;');
         document.getElementById('adminLogin').setAttribute('style', 'display:none;');
     }
 
     // If statement hides mobile navbar if device is more than 1100 pixels wide
-    if (window.screen.width >= 1100) {
+    if (window.screen.width >= 1080) {
       document.getElementById('mobileNav').setAttribute('style', 'display:none;');
     }
     
@@ -23,6 +23,10 @@ $(document).ready(function() {
     getContent('navbarPage').then(function(pageContent) {
         document.getElementById('logo-main').setAttribute('src', pageContent.image1.url);
         document.getElementById('logo-main').setAttribute('alt', pageContent.image1.description);
+    });
+    getContent('navbarPage').then(function(pageContent) {
+        document.getElementById('logo-mobi').setAttribute('src', pageContent.image1.url);
+        document.getElementById('logo-mobi').setAttribute('alt', pageContent.image1.description);
     });
     
 

@@ -47,7 +47,7 @@ header[role="banner"] #logo-main {
   padding-right: 0px;
 }
 /* gradient defined for a variety of web browsers */
-.navbar-nav {
+.deskyNav {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#4f3727), to(white));
   background-image: -webkit-linear-gradient(top, #fff, #7b6b63, #574232, #4f3727, #4f3727, #4f3727,#574232,#7b6b63, #fff);
   background-image: -moz-linear-gradient(top, #fff, #7b6b63, #574232, #4f3727, #4f3727, #4f3727,#574232,#7b6b63, #fff);
@@ -162,63 +162,6 @@ footer {
 }
 /* Rules for mobile navbar begin here */
 /* Bootstrap pill strategy used */
-.pillz {
-  color: #000;
-  margin: auto;
-}
-/* Gradient is different when compared to desktop */
-.chillz {
-  background-image: linear-gradient(to right, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #5B361F, #fff);
-  margin-left:2%;
-  margin-right:2%;
-  width:90%;
-}
-
-.nav-pills>.active>a,
-.nav-pills>.active>a:hover {
-  background-color: transparent;
-}
-/* Mobile dropdown requires clicking, as hover is disabled */
-.dropdown-menu{
-  background-image: linear-gradient(to bottom, #4f3727, #fff);
-}
-
-#mobileNav {
-  display: inline-block;
-}
-
-/* Varying screen widths cause problems, media queries can resolve them */
-/* Negative margin values pull pills together to better fit screens without adding a new row */
-/* max-width 340 catches extremely small widths, like iPhone5 */
-@media screen and (max-width:340px) {
-  .pillz {
-    /* margin-left: -3%;
-    margin-right: -3%; */
-    color: #000;
-  }
-  .pillz a {
-    color: #000;
-  }
-}
-/* Many devices fit this category */
-@media screen and (max-width:380px) {
-  .pillz {
-    /* margin-left: -2%; */
-    margin:auto;
-    width:16%;
-  }
-  .pillz a {
-    color: #000;
-  }
-}
-/* 420 pixel width catches many more mobile devices */
-@media screen and (max-width:420px) {
-  .pillz {
-    margin: auto;
-    /* margin-right: -3%; */
-    color: #000;
-  }
-  .pillz a {
-    color: #000;
-  }
+.navbar-inverse{
+  background-color:#4f3727;
 }
