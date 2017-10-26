@@ -148,8 +148,13 @@ nav{
 ul {
   border: none;
 }
-/* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
 
+/* Sets page height, so footer is always at the bottom of the page or content */
+#wrapper{
+  min-height: calc(100vh - 50px);
+}
+
+/* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
 footer {
   text-align: center;
   font-size: 1.4em;
@@ -164,4 +169,9 @@ footer {
 /* Bootstrap pill strategy used */
 .navbar-inverse{
   background-color:#4f3727;
+}
+
+/* Warning displayed cart is loaded with no cold pack */
+#coldPackWarning {
+  display: none;
 }

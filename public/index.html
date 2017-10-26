@@ -15,6 +15,10 @@
 
 
 
+  <div id="wrapper">
+
+
+
   <!-- Navbar here -->
   <div class="container-fluid" id="desktopNav">
     <header role="banner">
@@ -58,37 +62,56 @@
   </div>
   <!-- mobile navbar here -->
   <nav id="mobileNav" class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button style="float:left;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <button id="homeBtnLink" style="float:right; margin:5px;"><img id="logo-mobi" *ngIf="(!isAdmin && navbarImage1Src)" width="150" [src]="navbarImage1Src" [alt]="navbarImage1Description"></button>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="https://ganachechocolatier.org/">Home</a></li>
-            <li><a href="https://ganachechocolatier.org/">About</a></li>
-            <li><a href="https://ganachechocolatier.org/">Chocolates</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Truffles</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Assorted Chocolates</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Barks</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Fudge</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Other Chocolates</a></li>
-            <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Seasonal</a></li>
-            <li><a href="https://ganachechocolatier.org/">Shop</a></li>
-            <li><a href="https://ganachechocolatier.org/">Contact Us</a></li>
-    
-          </ul>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button style="float:left;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <button id="homeBtnLink" style="float:right; margin:5px;">
+          <img id="logo-mobi" *ngIf="(!isAdmin && navbarImage1Src)" width="150" [src]="navbarImage1Src" [alt]="navbarImage1Description">
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="https://ganachechocolatier.org/">Home</a></li>
+          <li><a href="https://ganachechocolatier.org/">About</a></li>
+          <li><a href="https://ganachechocolatier.org/">Chocolates</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Truffles</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Assorted Chocolates</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Barks</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Fudge</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Other Chocolates</a></li>
+          <li><a href="https://ganachechocolatier.org/">&nbsp;&nbsp;&nbsp;&nbsp;Seasonal</a></li>
+          <li><a href="https://ganachechocolatier.org/">Shop</a></li>
+          <li><a href="https://ganachechocolatier.org/">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="coldPackWarning" class="alert-danger">
+    <p>Warning!</p>
+    <div class="ecwid ecwid-SingleProduct-v2 ecwid-SingleProduct-v2-bordered ecwid-SingleProduct-v2-centered ecwid-Product ecwid-Product-30057401"
+      itemscope itemtype="http://schema.org/Product" data-single-product-id="30057401">
+      <div itemprop="image"></div>
+      <div class="ecwid-title" itemprop="name" content="4 Assorted Brownies"></div>
+      <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+        <div class="ecwid-productBrowser-price ecwid-price" itemprop="price" content="10" data-spw-price-location="button">
+          <div itemprop="priceCurrency" content="USD"></div>
         </div>
       </div>
-    </nav>
+      <div customprop="addtobag"></div>
+    </div>
 
+    <script type="text/javascript" src="https://app.ecwid.com/script.js?2314096&data_platform=singleproduct_v2" charset="utf-8"></script>
+    <script type="text/javascript">xProduct()</script>
+  </div>
 
 
 
@@ -115,40 +138,42 @@
 
 
 
-  
+<!-- End of wrapper div -->
+</div>
 
-  <!-- Footer -->
-  <div class="container-fluid">
-    <div class="row col-xs-12">
-      <footer>
-  
 
-        <!-- Mini Ganache logo -->
-        <img src="gLogo.png" id="adminLogin" style="float:left; height:30px; width:30px;">
 
-        <!-- Social media links -->
-        <div style="float: right">
-          <a id="footerInstagramLink" target="_blank">
-            <img src="instagram.png" alt="Instagram Logo" width="30px;">
-          </a>
-          <a id="footerFacebookLink" target="_blank">
-            <img src="facebook.png" alt="Facebook Logo" width="25px;">
-          </a>
-        </div>
-  
-        <!-- Text in middle of footer -->
-        <div style="width:100%">
-          <p id="footerParagraph" style="text-align: center;"></p>
-        </div>
-  
-  
-  
-      </footer>
-  
-  
-    </div>
+<!-- Footer -->
+<div class="container-fluid">
+  <div class="row col-xs-12">
+    <footer>
+
+
+      <!-- Mini Ganache logo -->
+      <img src="gLogo.png" id="adminLogin" style="float:left; height:30px; width:30px;">
+
+      <!-- Social media links -->
+      <div style="float: right">
+        <a id="footerInstagramLink" target="_blank">
+          <img src="instagram.png" alt="Instagram Logo" width="30px;">
+        </a>
+        <a id="footerFacebookLink" target="_blank">
+          <img src="facebook.png" alt="Facebook Logo" width="25px;">
+        </a>
+      </div>
+
+      <!-- Text in middle of footer -->
+      <div style="width:100%">
+        <p id="footerParagraph" style="text-align: center;"></p>
+      </div>
+
+
+
+    </footer>
+
   </div>
-  
+</div>
+
 
 
 
@@ -159,28 +184,28 @@
 
   <script type="text/javascript" src="https://app.ecwid.com/script.js?2314096" charset="utf-8"></script>
   <script type="text/javascript">
-    xProductBrowser("categoriesPerRow=3", "views=grid(4,3) list(10) table(20)", "categoryView=grid",
-      "searchView=list", "id=my-store-2314096");
-    xMinicart("style=", "layout=MiniAttachToProductBrowser");
-    xSearch("id=my-search-2314096");
+            xProductBrowser("categoriesPerRow=3", "views=grid(4,3) list(10) table(20)", "categoryView=grid",
+              "searchView=list", "id=my-store-2314096");
+            xMinicart("style=", "layout=MiniAttachToProductBrowser");
+            xSearch("id=my-search-2314096");
   </script>
 
   <script>
     // Initialize extra fields
     ec.order = ec.order || {};
     ec.order.extraFields = ec.order.extraFields || {};
-    
+
     // Add a new optional text input 'How should we sign the package?' to shipping address form
     ec.order.extraFields.wrapping_box_signature = {
-        'title': 'Warm weather may require a cold pack for shipping! Are you aware of this?',
-        'textPlaceholder': 'Cold Pack',
-        'type': 'select',
-        'selectOptions': [' ', 'I understand'],
-        'tip': 'We recommend you ship your order in a cold pack container. This is essential during summer months and highly recommended even during winter months. Only one container is required per order.',
-        'required': true,
-        'checkoutDisplaySection': 'shipping_address'
+      'title': 'Warm weather may require a cold pack for shipping! Are you aware of this?',
+      'textPlaceholder': 'Cold Pack',
+      'type': 'select',
+      'selectOptions': [' ', 'I understand'],
+      'tip': 'We recommend you ship your order in a cold pack container. This is essential during summer months and highly recommended even during winter months. Only one container is required per order.',
+      'required': true,
+      'checkoutDisplaySection': 'shipping_address'
     };
-    </script>
+  </script>
 
 
   <script type="text/javascript" src="jquery-3.2.1.js"></script>
