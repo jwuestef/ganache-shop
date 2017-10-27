@@ -1,12 +1,16 @@
 $(document).ready(function() {
 
 
+    let coldPackWarning = false;
+
+
 
     // Sets black border around Shop link in navbar
     document.getElementById('shopBtn').setAttribute('style', 'outline: 4px solid black; outline-offset:5px;');
 
 
     
+    // If statement hides desktop navbar if device is smaller than 1080 pixels wide
     if (window.screen.width < 1080) {
         document.getElementById('desktopNav').setAttribute('style', 'display:none;');
         document.getElementById('adminLogin').setAttribute('style', 'display:none;');
@@ -40,11 +44,29 @@ $(document).ready(function() {
 
 
 
+    window.addEventListener("hashchange", locationHashChanged);
+
+
+
     // Function that returns page content out of Firebase
     function getContent(pageName) {
         return firebase.database().ref('/' + pageName).once('value').then(function(pageContent) {
             return pageContent.val();
         })
+    }
+
+
+
+    function locationHashChanged() {
+        if(window.location.href.indexOf("cart") > -1) {
+            if (window.localStorage.getItem('PSecwid__2314096PScart').indexOf("COLDPACK") === -1) {
+                $('#coldPackWarning').slideDown(2000);
+                coldPackWarning = true;
+            }
+        } else if (coldPackWarning) {
+            $('#coldPackWarning').slideUp(2000);
+            coldPackWarning = false;
+        }
     }
 
 
