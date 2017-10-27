@@ -16,6 +16,7 @@ $(document).ready(function() {
         $('#myModal').modal('show');
         // Add an event listener for any click events
         document.getElementById('myModal').addEventListener('click', modalClicked);
+        document.getElementById('closeModal').addEventListener('click', rejectColdPack);
         document.getElementById('rejectColdPack').addEventListener('click', rejectColdPack);
     } else {
         console.log('initial page load, there IS a cold pack');
