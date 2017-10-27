@@ -10,15 +10,15 @@ $(document).ready(function() {
 
 
     
-    // If statement hides desktop navbar if device is smaller than 1080 pixels wide
+    // If statement shows mobile navbar if device is smaller than 1080 pixels wide
     if (window.screen.width < 1080) {
-        document.getElementById('desktopNav').setAttribute('style', 'display:none;');
+        document.getElementById('mobileNav').setAttribute('style', 'display:block;');
         document.getElementById('adminLogin').setAttribute('style', 'display:none;');
     }
-
-    // If statement hides mobile navbar if device is more than 1100 pixels wide
+    
+    // If statement shows desktop navbar if device is more than 1100 pixels wide
     if (window.screen.width >= 1080) {
-      document.getElementById('mobileNav').setAttribute('style', 'display:none;');
+        document.getElementById('desktopNav').setAttribute('style', 'display:block;');
     }
     
 
