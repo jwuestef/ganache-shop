@@ -171,7 +171,17 @@ footer {
   background-color:#4f3727;
 }
 
-/* Warning displayed cart is loaded with no cold pack */
-#coldPackWarning {
-  display: none;
+
+/* Warning modal for cold pack container, on page load */
+.modal-header {
+  background-color: #bcb1ac;
+  text-align: center;
+  font-size: 3rem;
+}
+.modal-body {
+  background-color: #d0c8c4;
+  font-size: 1.5rem;
+}
+.modal-footer {
+  background-color: #bcb1ac;
 }
