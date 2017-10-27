@@ -1,25 +1,31 @@
 $(document).ready(function() {
 
 
+
+    // Cold pack warning modals will re-popup after this many hours:
+    const resetModalsAfterHours = 1;
+
+
+
+    // If there is an item in local storage, get the number out of it, otherwise set it to be 0 (time code for Jan 1 1970)
     var coldPackSuggested = window.localStorage.getItem('coldPackSuggested') ? Number(window.localStorage.getItem('coldPackSuggested')) : 0;
-    // console.log('coldPackSuggested is:');
-    // console.log(new Date(Number(coldPackSuggested)).toUTCString);
-    // console.log('hoursSince(coldPackSuggested) is:')
-    // console.log(hoursSince(coldPackSuggested));
+    var cartColdPackSuggested = window.localStorage.getItem('cartColdPackSuggested') ? Number(window.localStorage.getItem('cartColdPackSuggested')) : 0;
 
 
 
+    // Watch for changes to the url's hash, important for detecting when they visit the cart, so we can show a popup the first time they visit with no coldpack added
+    window.addEventListener("hashchange", locationHashChanged);
 
-    // When page loads, if there is no cold pack in the cart, and it's been over an hour since the popup last appeared, then display a modal warning them
-    if (window.localStorage.getItem('PSecwid__2314096PScart').indexOf("COLDPACK") === -1 && hoursSince(coldPackSuggested) > 0.5) {
+
+
+    // If there is no cold pack in the cart, and it's been over an hour since the popup last appeared, then display a modal warning them
+    if (!coldPackInCart() && hoursSince(coldPackSuggested) > resetModalsAfterHours) {
         // No cold pack in the cart
         $('#myModal').modal('show');
         // Add an event listener for any click events
         document.getElementById('myModal').addEventListener('click', modalClicked);
         document.getElementById('closeModal').addEventListener('click', rejectColdPack);
         document.getElementById('rejectColdPack').addEventListener('click', rejectColdPack);
-    } else {
-        console.log('initial page load, there IS a cold pack');
     }
     
     
@@ -39,7 +45,7 @@ $(document).ready(function() {
     
 
 
-    // On page load, calls getContent function and populates attributes for the navbar image
+    // Calls getContent function and populates attributes for the NAVBAR image
     getContent('navbarPage').then(function(pageContent) {
         document.getElementById('logo-main').setAttribute('src', pageContent.image1.url);
         document.getElementById('logo-main').setAttribute('alt', pageContent.image1.description);
@@ -51,12 +57,19 @@ $(document).ready(function() {
     
 
 
-    // On page load, calls getContent function and populates attributes for footer content
+    // Calls getContent function and populates attributes for FOOTER content
     getContent('footerPage').then(function(pageContent) {
         document.getElementById('footerParagraph').innerText = pageContent.footerParagraph;
         document.getElementById('footerInstagramLink').setAttribute('href', pageContent.footerSocialMedia.instagram);
         document.getElementById('footerFacebookLink').setAttribute('href', pageContent.footerSocialMedia.facebook);
     });
+
+
+
+
+
+
+
 
 
 
@@ -69,27 +82,69 @@ $(document).ready(function() {
 
 
 
-    // Gets called when the cold pack warning modal receives a click event
-    function modalClicked(e) {
-        // Check whether the target of the click is the "Add to Bag" button
-        if (e.target.classList.contains('ecwid-AddToBagButton')) {
-            // If so, dismiss the modal, and set the time&date of the agreement.
-            $('#myModal').modal('hide');
-            window.localStorage.setItem('coldPackSuggested', Date.now());
+    // Called when the url hash changes
+    function locationHashChanged() {
+        // Check if the new url is the cart page
+        if(window.location.href.indexOf("cart") > -1) {
+            // Update the time since they last rejected the cartColdPack
+            cartColdPackSuggested = window.localStorage.getItem('cartColdPackSuggested') ? Number(window.localStorage.getItem('cartColdPackSuggested')) : 0;
+            // If they don't have a cold pack in their cart, and the hours since last cartRejection is at least 1, show modal
+            if (!coldPackInCart() && hoursSince(cartColdPackSuggested) > resetModalsAfterHours) {
+                // No cold pack in the cart
+                $('#myModal').modal('show');
+                // Add an event listener for any click events
+                document.getElementById('myModal').addEventListener('click', modalClicked);
+                document.getElementById('closeModal').addEventListener('click', rejectCartColdPack);
+                document.getElementById('rejectColdPack').addEventListener('click', rejectCartColdPack);
+            }
         }
     }
 
 
 
-    // Gets called when user clicks the "No thanks, I'll risk melted chocolates" button on the modal warning
+    // Gets called when the cold pack warning modal receives a click event
+    function modalClicked(e) {
+        // Check whether the target of the click is the "Add to Bag" button
+        if (e.target.classList.contains('ecwid-AddToBagButton')) {
+            // If so, dismiss the modal, irrelavant which page it's coming from
+            $('#myModal').modal('hide');
+        } else if (e.target.classList.contains('modal') && e.target.classList.contains('fade')) {
+            // If it contains both the 'modal' and the 'fade' classes, meaning the back drop was clicked, we need to find out which page it was dismissed from
+            if(window.location.href.indexOf("cart") > -1) {
+                // If it was from the cart page, set the local storage item for tracking the cart rejection
+                rejectCartColdPack();
+            } else {
+                // Otherwise, set the local storage item for tracking non-cart rejections
+                rejectColdPack();
+            }
+        }
+    }
+
+
+
+    // If there is a 'cart' item in local storage, then return the answer to (get the cart value see whether it contains a cold pack), otherwise false/noColdPackInCart
+    function coldPackInCart() {
+        return window.localStorage.getItem('PSecwid__2314096PScart') ? window.localStorage.getItem('PSecwid__2314096PScart').indexOf("COLDPACK") > -1 : false;
+    }
+
+
+
+    // Gets called when user clicks the "No thanks, I'll risk melted chocolates" button on the HOME PAGE modal warning
     function rejectColdPack() {
         window.localStorage.setItem('coldPackSuggested', Date.now());
     }
 
 
 
+    // Gets called when user clicks the "No thanks, I'll risk melted chocolates" button on the CART PAGE modal warning
+    function rejectCartColdPack() {
+        window.localStorage.setItem('cartColdPackSuggested', Date.now());
+    }
+
+
+
+    // Returns the number of hours since a given date, passed in as the number of milliseconds since Jan 1 1970
     function hoursSince(date) {
-        // Difference between dates (in milliseconds) turned to regular seconds
         var seconds = (new Date() - date) / 1000;
         var minutes = seconds / 60;
         var hours = Math.round(minutes / 60 * 100) / 100;
