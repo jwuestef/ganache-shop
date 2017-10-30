@@ -15,6 +15,37 @@ a:hover {
   color: black;
 }
 
+/* Warning modal for cold pack container, on page load */
+.modal-header {
+  background-color: #bcb1ac;
+  text-align: center;
+  font-size: 3rem;
+}
+.modal-body {
+  background-color: #d0c8c4;
+  font-size: 1.5rem;
+}
+.modal-footer {
+  background-color: #bcb1ac;
+}
+
+/* Sets page height, so footer is always at the bottom of the page or content */
+#wrapper{
+  min-height: calc(100vh - 50px);
+}
+
+/* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
+footer {
+  text-align: center;
+  font-size: 1.4em;
+  position: flex;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  width: 100%;
+  height: 40px;
+  color: #3b2314;
+}
+
 /* The rules for the desktop navbar begin here */
 /* The logo is centered and a margin assigned */
 header[role="banner"] #logo-main {
@@ -149,29 +180,8 @@ ul {
   border: none;
 }
 
-/* Sets page height, so footer is always at the bottom of the page or content */
-#wrapper{
-  min-height: calc(100vh - 50px);
-}
-
-/* this is where the rules for the footer are defined, :flex keeps the footer at the bottom */
-footer {
-  text-align: center;
-  font-size: 1.4em;
-  position: flex;
-  margin-top: 10px;
-  margin-bottom: -10px;
-  width: 100%;
-  height: 40px;
-  color: #3b2314;
-}
 /* Rules for mobile navbar begin here */
 /* Bootstrap pill strategy used */
 .navbar-inverse{
   background-color:#4f3727;
-}
-
-/* Warning displayed cart is loaded with no cold pack */
-#coldPackWarning {
-  display: none;
 }
