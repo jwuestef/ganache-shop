@@ -104,12 +104,10 @@ $(document).ready(function() {
 
     // Gets called when the cold pack warning modal receives a click event
     function modalClicked(e) {
-        // Check whether the target of the click is the "Add to Bag" button
-        if (e.target.classList.contains('ecwid-AddToBagButton')) {
-            // If so, dismiss the modal, irrelavant which page it's coming from
-            $('#myModal').modal('hide');
-        } else if (e.target.classList.contains('modal') && e.target.classList.contains('fade')) {
-            // If it contains both the 'modal' and the 'fade' classes, meaning the back drop was clicked, we need to find out which page it was dismissed from
+        // If it was the Add-To-Cart button that was clicked, the modal dismiss is handled in the html file via data-dismiss. Otherwise...
+        // If it contains both the 'modal' and the 'fade' classes, meaning the back drop was clicked, 
+        if (e.target.classList.contains('modal') && e.target.classList.contains('fade')) {
+            // We need to find out which page it was dismissed from
             if(window.location.href.indexOf("cart") > -1) {
                 // If it was from the cart page, set the local storage item for tracking the cart rejection
                 rejectCartColdPack();
