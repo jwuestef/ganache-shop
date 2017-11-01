@@ -178,6 +178,13 @@ ul {
 
 /* Rules for mobile navbar begin here */
 /* Bootstrap pill strategy used */
-.navbar-inverse {
-  background-color:#4f3727;
+.navbar-inverse{
+  background-color: transparent;
+}
+.brwnBtn{
+  float: left;
+  background-color: #4f3727;
+}
+.droppyDown{
+  background-color: #4f3727;
 }
